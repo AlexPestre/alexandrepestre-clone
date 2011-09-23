@@ -6,4 +6,12 @@ examples/iOS/BannerExample/GADInterstitialDelegate.h
 examples/iOS/BannerExample/GADRequest.h
 examples/iOS/BannerExample/GADRequestError.h
 examples/iOS/BannerExample/libGoogleAdMobAds.a
+examples/iOS/InterstitialExample/GADBannerView.h
+examples/iOS/InterstitialExample/GADBannerViewDelegate.h
+examples/iOS/InterstitialExample/GADInterstitial.h
+examples/iOS/InterstitialExample/GADInterstitialDelegate.h
+examples/iOS/InterstitialExample/GADRequest.h
+examples/iOS/InterstitialExample/GADRequestError.h
+examples/iOS/InterstitialExample/libGoogleAdMobAds.a
+
 
