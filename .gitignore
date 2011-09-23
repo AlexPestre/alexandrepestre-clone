@@ -1,17 +1,10 @@
-.DS_STORE
-examples/iOS/BannerExample/GADBannerView.h
-examples/iOS/BannerExample/GADBannerViewDelegate.h
-examples/iOS/BannerExample/GADInterstitial.h
-examples/iOS/BannerExample/GADInterstitialDelegate.h
-examples/iOS/BannerExample/GADRequest.h
-examples/iOS/BannerExample/GADRequestError.h
-examples/iOS/BannerExample/libGoogleAdMobAds.a
-examples/iOS/InterstitialExample/GADBannerView.h
-examples/iOS/InterstitialExample/GADBannerViewDelegate.h
-examples/iOS/InterstitialExample/GADInterstitial.h
-examples/iOS/InterstitialExample/GADInterstitialDelegate.h
-examples/iOS/InterstitialExample/GADRequest.h
-examples/iOS/InterstitialExample/GADRequestError.h
-examples/iOS/InterstitialExample/libGoogleAdMobAds.a
+.DS_Store
+examples/iOS/Library/GADBannerView.h
+examples/iOS/Library/GADBannerViewDelegate.h
+examples/iOS/Library/GADInterstitial.h
+examples/iOS/Library/GADInterstitialDelegate.h
+examples/iOS/Library/GADRequest.h
+examples/iOS/Library/GADRequestError.h
+examples/iOS/Library/libGoogleAdMobAds.a
 
 

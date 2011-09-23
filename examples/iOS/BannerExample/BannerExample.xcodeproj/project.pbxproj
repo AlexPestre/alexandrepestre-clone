@@ -20,7 +20,7 @@
 		28D7ACF80DDB3853001CB0EB /* BannerExampleViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* BannerExampleViewController.m */; };
 		6B52312F12F859EC0052877C /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = 6B52312E12F859EC0052877C /* Icon.png */; };
 		6B8B483F12E0FE2900EE85B8 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B8B483E12E0FE2900EE85B8 /* AudioToolbox.framework */; };
-		CF6ADC6D142CFC4B008D362E /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF6ADC6C142CFC4B008D362E /* libGoogleAdMobAds.a */; };
+		CF81C3F8142D421F0049F08E /* libGoogleAdMobAds.a in Frameworks */ = {isa = PBXBuildFile; fileRef = CF81C3F7142D421F0049F08E /* libGoogleAdMobAds.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,13 +43,13 @@
 		6B52312E12F859EC0052877C /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 		6B8B483E12E0FE2900EE85B8 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		8D1107310486CEB800E47090 /* BannerExample-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "BannerExample-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
-		CF6ADC66142CFC4B008D362E /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerView.h; sourceTree = "<group>"; };
-		CF6ADC67142CFC4B008D362E /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADBannerViewDelegate.h; sourceTree = "<group>"; };
-		CF6ADC68142CFC4B008D362E /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitial.h; sourceTree = "<group>"; };
-		CF6ADC69142CFC4B008D362E /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADInterstitialDelegate.h; sourceTree = "<group>"; };
-		CF6ADC6A142CFC4B008D362E /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequest.h; sourceTree = "<group>"; };
-		CF6ADC6B142CFC4B008D362E /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GADRequestError.h; sourceTree = "<group>"; };
-		CF6ADC6C142CFC4B008D362E /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGoogleAdMobAds.a; sourceTree = "<group>"; };
+		CF81C3F1142D421F0049F08E /* GADBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADBannerView.h; path = ../Library/GADBannerView.h; sourceTree = "<group>"; };
+		CF81C3F2142D421F0049F08E /* GADBannerViewDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADBannerViewDelegate.h; path = ../Library/GADBannerViewDelegate.h; sourceTree = "<group>"; };
+		CF81C3F3142D421F0049F08E /* GADInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADInterstitial.h; path = ../Library/GADInterstitial.h; sourceTree = "<group>"; };
+		CF81C3F4142D421F0049F08E /* GADInterstitialDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADInterstitialDelegate.h; path = ../Library/GADInterstitialDelegate.h; sourceTree = "<group>"; };
+		CF81C3F5142D421F0049F08E /* GADRequest.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADRequest.h; path = ../Library/GADRequest.h; sourceTree = "<group>"; };
+		CF81C3F6142D421F0049F08E /* GADRequestError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GADRequestError.h; path = ../Library/GADRequestError.h; sourceTree = "<group>"; };
+		CF81C3F7142D421F0049F08E /* libGoogleAdMobAds.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGoogleAdMobAds.a; path = ../Library/libGoogleAdMobAds.a; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,7 +64,7 @@
 				2035776812D53B9F00DD0C62 /* MediaPlayer.framework in Frameworks */,
 				2035776E12D53BB900DD0C62 /* MessageUI.framework in Frameworks */,
 				6B8B483F12E0FE2900EE85B8 /* AudioToolbox.framework in Frameworks */,
-				CF6ADC6D142CFC4B008D362E /* libGoogleAdMobAds.a in Frameworks */,
+				CF81C3F8142D421F0049F08E /* libGoogleAdMobAds.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -141,13 +141,13 @@
 		CF6ADC6E142CFD8B008D362E /* Google AdMob Ads SDK */ = {
 			isa = PBXGroup;
 			children = (
-				CF6ADC66142CFC4B008D362E /* GADBannerView.h */,
-				CF6ADC67142CFC4B008D362E /* GADBannerViewDelegate.h */,
-				CF6ADC68142CFC4B008D362E /* GADInterstitial.h */,
-				CF6ADC69142CFC4B008D362E /* GADInterstitialDelegate.h */,
-				CF6ADC6A142CFC4B008D362E /* GADRequest.h */,
-				CF6ADC6B142CFC4B008D362E /* GADRequestError.h */,
-				CF6ADC6C142CFC4B008D362E /* libGoogleAdMobAds.a */,
+				CF81C3F1142D421F0049F08E /* GADBannerView.h */,
+				CF81C3F2142D421F0049F08E /* GADBannerViewDelegate.h */,
+				CF81C3F3142D421F0049F08E /* GADInterstitial.h */,
+				CF81C3F4142D421F0049F08E /* GADInterstitialDelegate.h */,
+				CF81C3F5142D421F0049F08E /* GADRequest.h */,
+				CF81C3F6142D421F0049F08E /* GADRequestError.h */,
+				CF81C3F7142D421F0049F08E /* libGoogleAdMobAds.a */,
 			);
 			name = "Google AdMob Ads SDK";
 			sourceTree = "<group>";
@@ -238,6 +238,7 @@
 					"\"$(SRCROOT)/../../NextGen\"",
 					"\"$(SRCROOT)/../../../../../../Downloads/GoogleAdMobAdsSDK\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../Library\"",
 				);
 				PRODUCT_NAME = BannerExample;
 			};
@@ -256,6 +257,7 @@
 					"\"$(SRCROOT)/../../NextGen\"",
 					"\"$(SRCROOT)/../../../../../../Downloads/GoogleAdMobAdsSDK\"",
 					"\"$(SRCROOT)\"",
+					"\"$(SRCROOT)/../Library\"",
 				);
 				PRODUCT_NAME = BannerExample;
 				VALIDATE_PRODUCT = YES;
