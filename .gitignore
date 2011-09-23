@@ -1,0 +1,9 @@
+.DS_STORE
+examples/iOS/BannerExample/GADBannerView.h
+examples/iOS/BannerExample/GADBannerViewDelegate.h
+examples/iOS/BannerExample/GADInterstitial.h
+examples/iOS/BannerExample/GADInterstitialDelegate.h
+examples/iOS/BannerExample/GADRequest.h
+examples/iOS/BannerExample/GADRequestError.h
+examples/iOS/BannerExample/libGoogleAdMobAds.a
+
