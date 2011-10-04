@@ -41,16 +41,18 @@
 
 #pragma mark GADRequest generation
 
-// Here we're creating a simple GADRequest and adding a few separate keywords to
-// it.  Note that there's a bevy of additional options we could take advantage
-// of, such as location and demographic targeting.
+// Here we're creating a simple GADRequest and whitelisting the simulator
+// and two devices for test ads. You should request test ads during development
+// to avoid generating invalid impressions and clicks.
 - (GADRequest *)createRequest {
   GADRequest *request = [GADRequest request];
-  [request addKeyword:@"taxi service"];
-  [request addKeyword:@"airport"];
   
-  request.additionalParameters = [NSMutableDictionary 
-                                  dictionaryWithObject:@"on" forKey:@"adtest"];
+  request.testDevices = [NSArray arrayWithObjects:
+                         GAD_SIMULATOR_ID,                               // Simulator
+                         @"28ab37c3902621dd572509110745071f0101b124",    // Test iPhone 3G 3.0.1
+                         @"8cf09e81ef3ec5418c3450f7954e0e95db8ab200",    // Test iPod 4.3.1
+                         nil];
+
   return request;
 }
 
