@@ -17,6 +17,7 @@
 
 - (void)interstitial:(GADInterstitial *)interstitial
           didFailToReceiveAdWithError:(GADRequestError *)error {
+  // Alert the error.
   UIAlertView *alert = [[UIAlertView alloc]
                         initWithTitle:@"GADRequestError"
                         message:[error localizedDescription]
@@ -24,6 +25,11 @@
                         otherButtonTitles:nil];
   [alert show];
   [alert autorelease];
+
+  // Dispose of the interstitial properly.
+  interstitial.delegate = nil;
+  [interstitial release];
+  interstitial = nil;
 
   interstitialButton_.enabled = YES;
 }
@@ -33,17 +39,24 @@
   interstitialButton_.enabled = YES;
 }
 
-- (IBAction)showInterstitial:(id)sender {
-  if (!interstitial_) {
-    interstitial_ = [[GADInterstitial alloc] init];
+- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial {
+  // Dispose of the interstitial properly.
+  interstitial.delegate = nil;
+  [interstitial release];
+  interstitial = nil;
+}
 
-    interstitial_.delegate = self;
-    // Note: Edit InterstitialExampleAppDelegate.m to update 
-    // INTERSTITIAL_AD_UNIT_ID with your interstitial ad unit id.
-    interstitial_.adUnitID = ((InterstitialExampleAppDelegate *)
-                              [UIApplication sharedApplication].delegate).
-                                interstitialAdUnitID;
-  }
+- (IBAction)showInterstitial:(id)sender {
+  // Create a new GADInterstitial each time.  A GADInterstitial
+  // will only show one request in its lifetime.
+  interstitial_ = [[GADInterstitial alloc] init];
+
+  interstitial_.delegate = self;
+  // Note: Edit InterstitialExampleAppDelegate.m to update 
+  // INTERSTITIAL_AD_UNIT_ID with your interstitial ad unit id.
+  interstitial_.adUnitID = ((InterstitialExampleAppDelegate *)
+                            [UIApplication sharedApplication].delegate).
+                            interstitialAdUnitID;
     
   GADRequest *request = [GADRequest request];
     

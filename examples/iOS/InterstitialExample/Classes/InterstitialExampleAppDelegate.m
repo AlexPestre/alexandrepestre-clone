@@ -15,6 +15,7 @@
   [self.window addSubview:mainController_.view];
   [self.window makeKeyAndVisible];
 
+  // This is an example of how to create a splash interstitial.
   splashInterstitial_ = [[GADInterstitial alloc] init];
 
   splashInterstitial_.adUnitID = self.interstitialAdUnitID;
