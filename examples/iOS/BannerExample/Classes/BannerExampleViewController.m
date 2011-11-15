@@ -23,19 +23,25 @@
 
   // Note that the GADBannerView checks its frame size to determine what size
   // creative to request.
-  CGRect frame = CGRectMake(0, 410, 320, 50);
-  self.adBanner = [[[GADBannerView alloc] initWithFrame:frame] autorelease];
+
+  //Initialize the banner off the screen so that it animates up when displaying
+  self.adBanner = [[[GADBannerView alloc] initWithFrame:CGRectMake(0.0,
+                                                                   self.view.frame.size.height,
+                                                                   GAD_SIZE_320x50.width,
+                                                                   GAD_SIZE_320x50.height)] autorelease];
   // Note: Edit SampleConstants.h to provide a definition for kSampleAdUnitID
   // before compiling.
   self.adBanner.adUnitID = kSampleAdUnitID;
   self.adBanner.delegate = self;
   [self.adBanner setRootViewController:self];
+  [self.view addSubview:self.adBanner];
   [self.adBanner loadRequest:[self createRequest]];
+  
 }
 
 - (void)dealloc {
   self.adBanner.delegate = nil;
-  self.adBanner = nil;
+  [adBanner_ release];
   [super dealloc];
 }
 
@@ -47,10 +53,9 @@
 - (GADRequest *)createRequest {
   GADRequest *request = [GADRequest request];
   
+  //Make the request for a test ad
   request.testDevices = [NSArray arrayWithObjects:
                          GAD_SIMULATOR_ID,                               // Simulator
-                         @"28ab37c3902621dd572509110745071f0101b124",    // Test iPhone 3G 3.0.1
-                         @"8cf09e81ef3ec5418c3450f7954e0e95db8ab200",    // Test iPod 4.3.1
                          nil];
 
   return request;
@@ -58,15 +63,23 @@
 
 #pragma mark GADBannerViewDelegate impl
 
-// Since we've received an ad, let's go ahead and add it to the view.
-- (void)adViewDidReceiveAd:(GADBannerView *)view {
+// Since we've received an ad, let's go ahead and set the frame to display it.
+- (void)adViewDidReceiveAd:(GADBannerView *)adView {
   NSLog(@"Received ad");
-  [self.view addSubview:view];
+
+  [UIView animateWithDuration:1.0 animations:^ {
+    adView.frame = CGRectMake(0.0,
+                              self.view.frame.size.height -
+                              adView.frame.size.height,
+                              adView.frame.size.width,
+                              adView.frame.size.height);
+  
+  }];
 }
 
 - (void)adView:(GADBannerView *)view
     didFailToReceiveAdWithError:(GADRequestError *)error {
-  NSLog(@"failed to receive ad with error: %@", [error localizedFailureReason]);
+  NSLog(@"Failed to receive ad with error: %@", [error localizedFailureReason]);
 }
 
 @end

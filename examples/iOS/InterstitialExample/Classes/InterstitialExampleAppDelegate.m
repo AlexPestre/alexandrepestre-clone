@@ -11,8 +11,8 @@
 @synthesize window = window_;
 
 - (BOOL)application:(UIApplication *)application
-          didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  [self.window addSubview:mainController_.view];
+    didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+  [self.window addSubview:self.mainController.view];
   [self.window makeKeyAndVisible];
 
   // This is an example of how to create a splash interstitial.

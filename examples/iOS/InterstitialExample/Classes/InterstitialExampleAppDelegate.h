@@ -10,16 +10,16 @@
 // an ad unit ID and appropriately configured GADRequest. The former will be
 // nil if shouldFail is YES.
 @interface InterstitialExampleAppDelegate : NSObject
-             <UIApplicationDelegate, GADInterstitialDelegate> {
+    <UIApplicationDelegate, GADInterstitialDelegate> {
   UIWindow *window_;
   MainController *mainController_;
   GADInterstitial *splashInterstitial_;
 }
 
-@property (nonatomic, retain) IBOutlet UIWindow *window;
-@property (nonatomic, retain) IBOutlet MainController *mainController;
+@property(nonatomic, retain) IBOutlet UIWindow *window;
+@property(nonatomic, retain) IBOutlet MainController *mainController;
 
-@property (nonatomic, readonly) NSString *interstitialAdUnitID;
+@property(nonatomic, readonly) NSString *interstitialAdUnitID;
 
 @end
 

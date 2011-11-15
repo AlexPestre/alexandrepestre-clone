@@ -7,29 +7,24 @@
 @implementation MainController
 
 @synthesize interstitialButton = interstitialButton_;
+@synthesize interstitial = interstitial_;
 
 - (void)dealloc {
   interstitial_.delegate = nil;
   [interstitial_ release];
-
+  [interstitialButton_ release];
   [super dealloc];
 }
 
 - (void)interstitial:(GADInterstitial *)interstitial
-          didFailToReceiveAdWithError:(GADRequestError *)error {
+    didFailToReceiveAdWithError:(GADRequestError *)error {
   // Alert the error.
-  UIAlertView *alert = [[UIAlertView alloc]
+  UIAlertView *alert = [[[UIAlertView alloc]
                         initWithTitle:@"GADRequestError"
                         message:[error localizedDescription]
                         delegate:nil cancelButtonTitle:@"Drat"
-                        otherButtonTitles:nil];
+                        otherButtonTitles:nil] autorelease];
   [alert show];
-  [alert autorelease];
-
-  // Dispose of the interstitial properly.
-  interstitial.delegate = nil;
-  [interstitial release];
-  interstitial = nil;
 
   interstitialButton_.enabled = YES;
 }
@@ -39,22 +34,18 @@
   interstitialButton_.enabled = YES;
 }
 
-- (void)interstitialDidDismissScreen:(GADInterstitial *)interstitial {
-  // Dispose of the interstitial properly.
-  interstitial.delegate = nil;
-  [interstitial release];
-  interstitial = nil;
-}
 
 - (IBAction)showInterstitial:(id)sender {
   // Create a new GADInterstitial each time.  A GADInterstitial
-  // will only show one request in its lifetime.
-  interstitial_ = [[GADInterstitial alloc] init];
+  // will only show one request in its lifetime. The property will release the
+  // old one and set the new one.
+  self.interstitial = [[[GADInterstitial alloc] init] autorelease];
 
-  interstitial_.delegate = self;
+  self.interstitial.delegate = self;
+  
   // Note: Edit InterstitialExampleAppDelegate.m to update 
   // INTERSTITIAL_AD_UNIT_ID with your interstitial ad unit id.
-  interstitial_.adUnitID = ((InterstitialExampleAppDelegate *)
+  self.interstitial.adUnitID = ((InterstitialExampleAppDelegate *)
                             [UIApplication sharedApplication].delegate).
                             interstitialAdUnitID;
     
@@ -65,7 +56,7 @@
       GAD_SIMULATOR_ID, // Simulator
       nil];
     
-  [interstitial_ loadRequest: request];
+  [self.interstitial loadRequest: request];
 
   interstitialButton_.enabled = NO;
 }

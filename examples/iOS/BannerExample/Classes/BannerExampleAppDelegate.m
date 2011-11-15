@@ -91,8 +91,8 @@
 
 
 - (void)dealloc {
-  [self.viewController release];
-  [self.window release];
+  [viewController_ release];
+  [window_ release];
   [super dealloc];
 }
 

@@ -10,7 +10,8 @@
   GADInterstitial *interstitial_;
 }
 
-@property (nonatomic, retain) IBOutlet UIButton *interstitialButton;
+@property(nonatomic, retain) IBOutlet UIButton *interstitialButton;
+@property(nonatomic, retain) GADInterstitial *interstitial;
 
 - (IBAction)showInterstitial:(id)sender;
 

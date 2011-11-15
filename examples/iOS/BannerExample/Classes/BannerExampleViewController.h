@@ -10,12 +10,12 @@
 
 @class GADBannerView, GADRequest;
 
-@interface BannerExampleViewController : UIViewController
+@interface BannerExampleViewController : UIViewController 
     <GADBannerViewDelegate> {
   GADBannerView *adBanner_;
 }
 
-@property (nonatomic, retain) GADBannerView *adBanner;
+@property(nonatomic, retain) GADBannerView *adBanner;
 
 - (GADRequest *)createRequest;
 
